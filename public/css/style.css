@@ -1,0 +1,24 @@
+.matrix {
+    display: flex;
+    justify-content: center;
+}
+.matrix table tr td {
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    border:1px solid gray;
+    position: relative;
+}
+.matrix table tr td .hints {
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+}
+.matrix table tr td .hints .hint {
+    flex: 0 1 auto;
+    width: 33.333333%;
+    visibility: hidden;
+}
+.matrix table tr td div.value span{
+    font-size: 2rem;
+}
