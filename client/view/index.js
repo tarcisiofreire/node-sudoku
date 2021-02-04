@@ -14,7 +14,10 @@ fetch("http://localhost:3000/game").then(response => {
     }
 })
 .then(data => {
-    console.log(data.values)
+    //Salva no localStorage as informações do jogo
+    localStorage.setItem("jogo", JSON.stringify(data))
+
+    //Cria os elementos iniciais no jogo
     linesGrid.forEach((elm,ielm) => {
         let cells = elm.querySelectorAll('td div.value span')
         cells.forEach((cell, icell) => {
