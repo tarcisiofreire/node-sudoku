@@ -9,6 +9,8 @@ module.exports = () => {
     //Permite que a API leia as requisiões POST indicando os parsers de dados aceitos
     app.use(bodyParser.urlencoded({extended:true}))
     app.use(bodyParser.json())
+    app.use(express.static('client'))
+    app.use(express.static('public'))
 
     consign()
         .include('./server/controllers')

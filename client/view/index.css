@@ -1,3 +1,23 @@
+:root{
+    --linha-grossa: #6e6e6e;
+    --linha-fina: #cecbcb;
+}
+
+.matrix table{
+    border:2px solid var(--linha-grossa);
+    border-collapse: collapse;
+}
+
+.matrix table td.c3,
+.matrix table td.c6
+{
+    border-right: 2px solid var(--linha-grossa);
+}
+.matrix table tr.l3,
+.matrix table tr.l6
+{
+    border-bottom: 2px solid var(--linha-grossa);
+}
 .matrix {
     display: flex;
     justify-content: center;
@@ -6,7 +26,7 @@
     width: 4rem;
     height: 4rem;
     text-align: center;
-    border:1px solid gray;
+    border:1px solid var(--linha-fina);
     position: relative;
 }
 .matrix table tr td .hints {
