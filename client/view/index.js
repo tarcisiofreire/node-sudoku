@@ -22,7 +22,7 @@ fetch("http://localhost:3000/game").then(response => {
         let cells = elm.querySelectorAll('td div.value span')
         cells.forEach((cell, icell) => {
             let value = data.initValues[ielm+1][icell]
-            console.log(value)
+
             if(value != 0) {
                 cell.innerHTML = value
             }

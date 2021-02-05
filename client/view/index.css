@@ -1,6 +1,8 @@
 :root{
     --linha-grossa: #6e6e6e;
     --linha-fina: #cecbcb;
+    --selected: #d2dacc;
+    --secundary-selected: #d2dacc;
 }
 
 .matrix table{
@@ -28,6 +30,12 @@
     text-align: center;
     border:1px solid var(--linha-fina);
     position: relative;
+}
+.matrix td:hover{
+    background-color: beige;
+}
+.matrix td.active{
+    background-color: var(--selected);
 }
 .matrix table tr td .hints {
     display: flex;
