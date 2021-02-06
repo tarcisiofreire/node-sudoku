@@ -5,6 +5,7 @@
 //and send the return
 
 const cells = document.querySelectorAll(".matrix td")
+
 cells.forEach(e =>{
     e.addEventListener('mousedown', (element) => {
         let el = element.currentTarget
@@ -12,22 +13,41 @@ cells.forEach(e =>{
     },false)
 })
 
-const hilightElements = (el) => {
-    cells.forEach((e) => {e.classList.remove('active')})
-    
-    let parent = el.parentNode
-    let parentClass = parent.classList.value
-    let elClass = el.classList.value
-    let idClass = parentClass + elClass
-    let group = returnGroup(idClass)
-    let groupString = "#"+group.join(" ,#")
+document.addEventListener('keydown', (event) => {
+    const keyName = event.key;
+    if (['1','2','3','4','5','6','7','8','9'].includes(keyName)){
+        validInput(keyName)
+    } else {
+        console.log("Pressinone uma tecla de um a nove.")
+    }
+});
 
-    document.querySelectorAll("td."+elClass+" ,"+ groupString).forEach(td => td.classList.add('active'))
- 
+const hilightElements = (el) => {
+    cells.forEach((e) => {
+        e.classList.remove('active','input')
+        e.children[0].classList.remove('active')
+    })
+
+    let val = el.querySelector(".value > span").innerHTML
+
+    let parent = el.parentNode
+    let elColumn = el.dataset.column
+    let group = returnGroup(el.id)
+    let groupString = "#"+group.join(" ,#")
+    let equals = returnEqualElements(el)
+    
+    //highlight the equals elements
+    equals.forEach(item => item.classList.add('active'))
+    
+    //highlight the same column and 9's group
+    document.querySelectorAll("td[data-column='"+elColumn+"'] ,"+ groupString).forEach(td => td.classList.add('active'))
+    //highlight the same row
     parent.querySelectorAll("td").forEach(td => td.classList.add('active'))
- 
-    el.classList.toggle('active')
+    el.classList.add('input')
+    //el.classList.toggle('active')
+
 }
+
 const returnGroup = (identifier) => {
     const groups = [
         ['l1c1','l1c2','l1c3','l2c1','l2c2','l2c3','l3c1','l3c2','l3c3'],
@@ -53,3 +73,40 @@ const returnGroup = (identifier) => {
     return group
 }
 
+const returnEqualElements = (el) => {
+    const allValues = document.querySelectorAll(".matrix td .value")
+    const numbers = [...allValues].filter(n => {
+        return n.innerText !== "" && n.innerText == el.querySelector("span").innerText
+    })
+    return numbers
+}
+
+const validInput = (keyString) => {
+    const cellInput = document.querySelector("td.input")
+    if(
+        (cellInput != null && cellInput.children[0].innerText == "") ||
+        cellInput.classList.contains('erro')
+      )
+    {
+        //checa com os valores do jogo
+        //imprime com o destaque de correto - azul
+        //alerta de incorreto - vermelho
+        if(keyString != getValue(cellInput)){
+           cellInput.classList.add("erro")
+        } else {
+            cellInput.classList.remove("erro")
+        }
+        cellInput.children[0].children[0].innerText = keyString
+    } else {
+        console.log("Selecione uma célula válida do Sudoku para inserir o seu palpite.")
+    }
+}
+
+const getValue = (cell) => {
+    const result = JSON.parse(localStorage.getItem("jogo"))
+    const id = cell.id
+    const row = id.substring(1,2)
+    const column = id.substring(3,4)
+
+    return result.values[row][column-1]
+}

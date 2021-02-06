@@ -5,6 +5,13 @@
     --secundary-selected: #d2dacc;
 }
 
+.active{
+    font-weight: bold;
+    color:rgb(0, 39, 97);
+}
+.erro{
+    color: rgb(105, 0, 18) !important;
+}
 .matrix table{
     border:2px solid var(--linha-grossa);
     border-collapse: collapse;
@@ -30,6 +37,7 @@
     text-align: center;
     border:1px solid var(--linha-fina);
     position: relative;
+    color:#363636
 }
 .matrix td:hover{
     background-color: beige;
@@ -47,6 +55,6 @@
     width: 33.333333%;
     visibility: hidden;
 }
-.matrix table tr td div.value span{
+.matrix table tr td div.value{
     font-size: 2rem;
 }
