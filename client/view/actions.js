@@ -15,29 +15,79 @@ cells.forEach(e => {
 
 document.addEventListener('keydown', (event) => {
     const keyLabel = event.key;
+    let hint = document.querySelector("#hint").dataset.active
+
     if (['1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(keyLabel)) {
-        validInput(keyLabel)
-    } else {
+        if (hint == "true") {
+            setHint(keyLabel)
+        } else {
+            validInput(keyLabel)
+        }
+    } else if (['Backspace', 'Delete'].includes(keyLabel)) {
+        clear(keyLabel)
+    }
+    else {
         console.log("Pressinone uma tecla de um a nove.")
     }
 });
 
+//Controla as entradas com o mouse
 document.querySelectorAll("#numbers > div")
     .forEach(e => {
         e.addEventListener('mousedown', (input) => {
             const number = input.currentTarget.innerText
-            validInput(number)
+            let hint = document.querySelector("#hint").dataset.active
+
+            if (hint == "true") {
+                setHint(number)
+            } else {
+                validInput(number)
+            }
         })
     })
 
+//Control panel  
 document.querySelector("#clear").addEventListener('mousedown', () => {
+    clear()
+})
+
+//Hint button
+document.querySelector("#hint").addEventListener('mousedown', (input) => {
+    const el = input.currentTarget
+    if (el.dataset.active == "false") {
+        el.dataset.active = true
+    } else {
+        el.dataset.active = false
+    }
+    console.log("palpite = " + el.dataset.active)
+})
+
+const setHint = (number) => {
     const cellInput = document.querySelector("td.input")
-    if(cellInput.classList.contains('erro')){
+    console.log(number)
+    if(cellInput){
+        const value = cellInput.children[0]
+        const hint = cellInput.children[1]
+    
+        value.classList.add("display-none")
+        hint.classList.remove("display-none")
+        hint.querySelector(".c"+number).classList.toggle('visible')
+    } else {
+        console.log("Selecione uma célula válida do Sudoku para inserir o seu palpite.")
+    }
+    
+}
+
+const clear = () => {
+    const cellInput = document.querySelector("td.input")
+    if (cellInput != null && cellInput.classList.contains('erro') ) {
         cellInput.children[0].children[0].innerText = ""
         cellInput.classList.remove('erro')
+    } else {
+        console.log("Selecione uma célula válida do Sudoku para inserir o seu palpite.")
     }
-})
-    
+}
+
 const hilightElements = (el) => {
     cells.forEach((e) => {
         e.classList.remove('active', 'input')
@@ -98,18 +148,22 @@ const returnEqualElements = (el) => {
 }
 
 const validInput = (keyString) => {
+    //Get selected cell and set correct visibility
     const cellInput = document.querySelector("td.input")
+    cellInput.children[0].classList.remove("display-none")
+    cellInput.children[1].classList.add("display-none")
+    
     if (
         (cellInput != null && cellInput.children[0].innerText == "") ||
-        cellInput.classList.contains('erro')
+        (cellInput != null && cellInput.classList.contains('erro'))
     ) {
         //check values' game
         //Print the right value in blue
         //Print and show the wrong answer in red
         if (keyString != getCorrectValue(cellInput)) {
             cellInput.classList.add("erro")
-            if(isEndGame(countErro())){
-               console.log("Chama início do Jogo")
+            if (isEndGame(countErro())) {
+                console.log("Chama início do Jogo")
             }
 
         } else {
@@ -143,7 +197,7 @@ const countErro = () => {
     jogo.erros = erros
     isEndGame(erros)
     localStorage.setItem("jogo", JSON.stringify(jogo))
-    
+
     return erros
 }
 
@@ -152,5 +206,5 @@ const isEndGame = (errors) => {
 }
 
 const saveState = () => {
-    
+
 }

@@ -20,7 +20,12 @@ li{
 .erro .active{
     color: rgb(105, 0, 18) !important;
 }
-
+.display-none{
+    display: none !important;
+}
+.visible{
+    visibility: visible !important;
+}
 .input {
     background: #a2d8ee !important;
     cursor: pointer;
@@ -92,7 +97,6 @@ li{
 .matrix table tr td .hints {
     display: flex;
     flex-wrap: wrap;
-    display: none;
 }
 .matrix table tr td .hints .hint {
     flex: 0 1 auto;
