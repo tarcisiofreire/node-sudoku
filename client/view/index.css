@@ -4,19 +4,65 @@
     --selected: #d2dacc;
     --secundary-selected: #d2dacc;
 }
-
+body{
+    color:#363636;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+li{
+    list-style: none;
+}
 .active{
     font-weight: bold;
     color:rgb(24, 150, 253);
 }
+
 .erro{
     color: rgb(105, 0, 18) !important;
 }
+
+.input {
+    background: #a2d8ee !important;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+#informations{
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+}
+@media (max-width: 850px) {
+    #informations{
+        width: 95vw;
+    }
+}
+@media (min-width: 1150px) {
+    #informations{
+        width: 40vw;
+    }
+}
+.matrix {
+    display: flex;
+    justify-content: center;
+}
+
 .matrix table{
+    width: 70vw;
+    height: 70vw;
     border:2px solid var(--linha-grossa);
     border-collapse: collapse;
 }
-
+@media (max-width: 850px) {
+    .matrix table{
+        width: 95vw;
+        height: 95vw;
+    }
+}
+@media (min-width: 1150px) {
+    .matrix table{
+        width: 40vw;
+        height: 40vw;
+    }
+}
 .matrix table td.c3,
 .matrix table td.c6
 {
@@ -27,17 +73,13 @@
 {
     border-bottom: 2px solid var(--linha-grossa);
 }
-.matrix {
-    display: flex;
-    justify-content: center;
-}
+
 .matrix table tr td {
     width: 4rem;
     height: 4rem;
     text-align: center;
     border:1px solid var(--linha-fina);
     position: relative;
-    color:#363636
 }
 .matrix td:hover{
     background-color: beige;
@@ -58,38 +100,65 @@
 .matrix table tr td div.value{
     font-size: 2rem;
 }
+.container {
+    display: flex;
+    justify-content: center;
+}
+#numbers{
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    font-size:xx-large;
+}
+@media (max-width: 850px) {
+    #numbers{
+        width: 95vw;
+    }
+}
+@media (min-width: 1150px) {
+    #numbers{
+        width: 40vw;
+    }
+}
+#menu{
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+}
+@media (max-width: 850px) {
+    #menu{
+        width: 95vw;
+    }
+}
+@media (min-width: 1150px) {
+    #menu{
+        width: 40vw;
+    }
+}
 
-.input {
-    background: #72c9eb !important;
-    cursor: pointer;
-    animation: pulse 2s infinite;
-  }
-  .pulse:hover {
-    animation: none;
-  }
-  
-  @-webkit-keyframes pulse {
+
+@-webkit-keyframes pulse {
     0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+      -webkit-box-shadow: inset 0 0 0 0 rgba(2, 86, 243, 0.4);
     }
     70% {
-        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        -webkit-box-shadow: inset 0 0 0 10px rgba(2, 86, 243, 0);
     }
     100% {
-        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        -webkit-box-shadow: inset  0 0 0 0 rgba(2, 86, 243,0);
     }
-  }
-  @keyframes pulse {
+}
+@keyframes pulse {
     0% {
-      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+      -moz-box-shadow: inset 0 0 0 0 rgba(2, 86, 243, 0.4);
+      box-shadow: inset 0 0 0 0 rgba(2, 86, 243, 0.4);
     }
     70% {
-        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        -moz-box-shadow: inset 0 0 0 10px rgba(2, 86, 243, 0);
+        box-shadow: inset 0 0 0 10px rgba(2, 86, 243, 0);
     }
     100% {
-        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        -moz-box-shadow: inset 0 0 0 0 rgba(2, 86, 243, 0);
+        box-shadow: inset 0 0 0 0 rgba(2, 86, 243, 0);
     }
-  }
+}

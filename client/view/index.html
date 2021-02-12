@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
+    <div class="container">
+        <dl id="informations">
+            <li>Type: <span>Easy</span></li>
+            <li>Errors: <span id="errors">0</span>/3</li>
+            <li>Timer: <span id="timer">00:00</span></li>
+        </dl>
+    </div>
     <div class="matrix">
         <table>
             <tr class="l1">
@@ -1397,6 +1405,28 @@
                 </td>
             </tr>
         </table>
+    </div>
+    <div class="container">
+        <ul id="menu">
+            <li>Voltar</li>
+            <li>Limpar</li>
+            <li>Palpite</li>
+            <li>Dica</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div id="numbers">
+            <div id="1">1</div>
+            <div id="2">2</div>
+            <div id="3">3</div>
+            <div id="4">4</div>
+            <div id="5">5</div>
+            <div id="6">6</div>
+            <div id="7">7</div>
+            <div id="8">8</div>
+            <div id="9">9</div>
+            <div id="10">10</div>   
+        </div>
     </div>
     <script src="index.js"></script>
     <script src="actions.js"></script>
