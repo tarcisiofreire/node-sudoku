@@ -16,7 +16,8 @@ li{
     color:rgb(24, 150, 253);
 }
 
-.erro{
+.erro,
+.erro .active{
     color: rgb(105, 0, 18) !important;
 }
 
@@ -86,6 +87,7 @@ li{
 }
 .matrix td.active{
     background-color: var(--selected);
+    color:#363636;
 }
 .matrix table tr td .hints {
     display: flex;

@@ -30,6 +30,14 @@ document.querySelectorAll("#numbers > div")
         })
     })
 
+document.querySelector("#clear").addEventListener('mousedown', () => {
+    const cellInput = document.querySelector("td.input")
+    if(cellInput.classList.contains('erro')){
+        cellInput.children[0].children[0].innerText = ""
+        cellInput.classList.remove('erro')
+    }
+})
+    
 const hilightElements = (el) => {
     cells.forEach((e) => {
         e.classList.remove('active', 'input')
