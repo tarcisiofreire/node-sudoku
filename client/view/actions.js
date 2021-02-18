@@ -59,12 +59,11 @@ document.querySelector("#hint").addEventListener('mousedown', (input) => {
     } else {
         el.dataset.active = false
     }
-    console.log("palpite = " + el.dataset.active)
 })
 
 const setHint = (number) => {
     const cellInput = document.querySelector("td.input")
-    console.log(number)
+
     if(cellInput){
         const value = cellInput.children[0]
         const hint = cellInput.children[1]
@@ -80,19 +79,22 @@ const setHint = (number) => {
 
 const clear = () => {
     const cellInput = document.querySelector("td.input")
-    if (cellInput != null && cellInput.classList.contains('erro') ) {
+    if (cellInput != null && cellInput.classList.contains('error') ) {
         cellInput.children[0].children[0].innerText = ""
-        cellInput.classList.remove('erro')
+        cellInput.classList.remove('error')
     } else {
         console.log("Selecione uma célula válida do Sudoku para inserir o seu palpite.")
     }
 }
 
 const hilightElements = (el) => {
-    cells.forEach((e) => {
-        e.classList.remove('active', 'input')
-        e.children[0].classList.remove('active')
-    })
+    const activatedElements = document.querySelectorAll(".active")
+
+    if (activatedElements.length){
+        activatedElements.forEach((e) => {
+            e.classList.remove('active', 'input')
+        })
+    }
 
     let val = el.querySelector(".value > span").innerHTML
 
@@ -140,7 +142,8 @@ const returnGroup = (identifier) => {
 }
 
 const returnEqualElements = (el) => {
-    const allValues = document.querySelectorAll(".matrix td .value")
+    //Select natrix's cells and hints' values
+    const allValues = document.querySelectorAll(".matrix td .value, .matrix td .hints .visible")
     const numbers = [...allValues].filter(n => {
         return n.innerText !== "" && n.innerText == el.querySelector("span").innerText
     })
@@ -155,19 +158,19 @@ const validInput = (keyString) => {
     
     if (
         (cellInput != null && cellInput.children[0].innerText == "") ||
-        (cellInput != null && cellInput.classList.contains('erro'))
+        (cellInput != null && cellInput.classList.contains('error'))
     ) {
         //check values' game
         //Print the right value in blue
         //Print and show the wrong answer in red
         if (keyString != getCorrectValue(cellInput)) {
-            cellInput.classList.add("erro")
+            cellInput.classList.add("error")
             if (isEndGame(countErro())) {
                 console.log("Chama início do Jogo")
             }
 
         } else {
-            cellInput.classList.remove("erro")
+            cellInput.classList.remove("error")
         }
         cellInput.children[0].children[0].innerText = keyString
     } else {
@@ -186,19 +189,19 @@ const getCorrectValue = (cell) => {
 
 const countErro = () => {
     let jogo = JSON.parse(localStorage.getItem("jogo"))
-    let erros = 0
+    let errors = 0
 
-    if (!jogo.hasOwnProperty('erros')) {
-        erros = 1
+    if (!jogo.hasOwnProperty('errors')) {
+        errors = 1
     } else {
-        erros = parseInt(jogo.erros) + 1
+        errors = parseInt(jogo.errors) + 1
     }
-    document.getElementById('errors').innerHTML = erros
-    jogo.erros = erros
-    isEndGame(erros)
+    document.getElementById('errors').innerHTML = errors
+    jogo.errors = errors
+    isEndGame(errors)
     localStorage.setItem("jogo", JSON.stringify(jogo))
 
-    return erros
+    return errors
 }
 
 const isEndGame = (errors) => {

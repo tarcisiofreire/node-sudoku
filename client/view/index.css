@@ -1,8 +1,11 @@
 :root{
-    --linha-grossa: #6e6e6e;
-    --linha-fina: #cecbcb;
+    --thick-line: #6e6e6e;
+    --thin-line: #cecbcb;
     --selected: #d2dacc;
     --secundary-selected: #d2dacc;
+    --highlithed-selected: rgb(33, 152, 250);
+    --highlithed-active: #022f63;
+    --error: rgb(150, 1, 1);
 }
 body{
     color:#363636;
@@ -13,12 +16,12 @@ li{
 }
 .active{
     font-weight: bold;
-    color:rgb(24, 150, 253);
+    color:var(--highlithed-selected);
 }
 
-.erro,
-.erro .active{
-    color: rgb(105, 0, 18) !important;
+.error,
+.error .active{
+    color:var(--error) !important;
 }
 .display-none{
     display: none !important;
@@ -26,6 +29,13 @@ li{
 .visible{
     visibility: visible !important;
 }
+
+#hint[data-active='true']{
+    background-color: var(--highlithed-selected);
+    color: var(--selected);
+
+}
+
 .input {
     background: #a2d8ee !important;
     cursor: pointer;
@@ -54,7 +64,7 @@ li{
 .matrix table{
     width: 70vw;
     height: 70vw;
-    border:2px solid var(--linha-grossa);
+    border:2px solid var(--thick-line);
     border-collapse: collapse;
 }
 @media (max-width: 850px) {
@@ -72,19 +82,19 @@ li{
 .matrix table td.c3,
 .matrix table td.c6
 {
-    border-right: 2px solid var(--linha-grossa);
+    border-right: 2px solid var(--thick-line);
 }
 .matrix table tr.l3,
 .matrix table tr.l6
 {
-    border-bottom: 2px solid var(--linha-grossa);
+    border-bottom: 2px solid var(--thick-line);
 }
 
 .matrix table tr td {
     width: 4rem;
     height: 4rem;
     text-align: center;
-    border:1px solid var(--linha-fina);
+    border:1px solid var(--thin-line);
     position: relative;
 }
 .matrix td:hover{
@@ -95,13 +105,15 @@ li{
     color:#363636;
 }
 .matrix table tr td .hints {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
+    gap: 0px;
 }
 .matrix table tr td .hints .hint {
     flex: 0 1 auto;
     width: 33.333333%;
     visibility: hidden;
+    font-size:0.8rem
 }
 .matrix table tr td div.value{
     font-size: 2rem;
@@ -115,6 +127,7 @@ li{
     display: flex;
     justify-content: space-around;
     font-size:xx-large;
+    cursor: pointer;
 }
 @media (max-width: 850px) {
     #numbers{
@@ -126,10 +139,37 @@ li{
         width: 40vw;
     }
 }
+#numbers div{
+    width: 11.11%;
+    text-align: center;
+    border-radius: 0.4rem;
+}
+#numbers div:hover{
+    background-color:var(--highlithed-selected);
+    color: var(--selected);
+}
+#numbers div:active{
+    background-color:var(--highlithed-active);
+    color: var(--selected);
+}
+
 #menu{
     width: 70vw;
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
+}
+#menu li:hover{
+    background-color: var(--highlithed-selected);
+    color: var(--selected);
+}
+#menu li:active{
+    background-color: var(--highlithed-active);
+}
+ul#menu li {
+    padding: 0 1rem;
+    border-radius: 0.4rem;
+    padding: 0 1rem;
 }
 @media (max-width: 850px) {
     #menu{
