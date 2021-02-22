@@ -16,7 +16,6 @@ cells.forEach(e => {
 document.addEventListener('keydown', (event) => {
     const keyLabel = event.key;
     let hint = document.querySelector("#hint").dataset.active
-
     if (['1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(keyLabel)) {
         if (hint == "true") {
             setHint(keyLabel)
@@ -25,6 +24,8 @@ document.addEventListener('keydown', (event) => {
         }
     } else if (['Backspace', 'Delete'].includes(keyLabel)) {
         clear(keyLabel)
+    } else if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(keyLabel)) {
+        ctrlArrows(keyLabel, cells)
     }
     else {
         console.log("Pressinone uma tecla de um a nove.")
@@ -153,13 +154,14 @@ const returnEqualElements = (el) => {
 const validInput = (keyString) => {
     //Get selected cell and set correct visibility
     const cellInput = document.querySelector("td.input")
-    cellInput.children[0].classList.remove("display-none")
-    cellInput.children[1].classList.add("display-none")
     
-    if (
-        (cellInput != null && cellInput.children[0].innerText == "") ||
+    if ((cellInput != null && cellInput.children[0].innerText == "") ||
         (cellInput != null && cellInput.classList.contains('error'))
-    ) {
+        ) {
+        
+        cellInput.children[0].classList.remove("display-none")
+        cellInput.children[1].classList.add("display-none")
+        
         //check values' game
         //Print the right value in blue
         //Print and show the wrong answer in red
@@ -210,4 +212,59 @@ const isEndGame = (errors) => {
 
 const saveState = () => {
 
+}
+
+const ctrlArrows = (arrow, cells) => {
+    //check if there is cell active
+    //get arrow direction
+    //active respective cell from the arrow direction
+    const cellInput = document.querySelector("td.input")
+
+    if (cellInput != null){
+        const id = cellInput.id
+        let y = id.substring(1, 2)
+        let x = id.substring(3, 4)
+        console.log(id)
+        switch (arrow) {
+            case "ArrowUp":
+                if(y == "1"){
+                    y=9
+                } else {
+                    y--        
+                }    
+                break;
+        
+            case "ArrowDown":
+                if(y == "9"){
+                    y=1
+                } else {
+                    y++        
+                } 
+                break;
+        
+            case "ArrowLeft":
+                if(x == "1"){
+                    x=9
+                } else {
+                    x--        
+                } 
+                break;
+        
+            case "ArrowRight":
+                if(x == "9"){
+                    x=1
+                } else {
+                    x++        
+                } 
+                break;
+        
+        }
+        console.log(x+y)
+        cell = document.querySelector("#l"+y+"c"+x+"")
+        hilightElements(cell)
+    } else {
+        hilightElements(cells[0])
+    }
+
+    
 }
