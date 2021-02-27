@@ -68,8 +68,9 @@ const setHint = (number) => {
     if(cellInput){
         const value = cellInput.children[0]
         const hint = cellInput.children[1]
-    
+        
         value.classList.add("display-none")
+        value.children[0].innerText = ""
         hint.classList.remove("display-none")
         hint.querySelector(".c"+number).classList.toggle('visible')
     } else {
@@ -154,10 +155,12 @@ const returnEqualElements = (el) => {
 const validInput = (keyString) => {
     //Get selected cell and set correct visibility
     const cellInput = document.querySelector("td.input")
-    
-    if ((cellInput != null && cellInput.children[0].innerText == "") ||
-        (cellInput != null && cellInput.classList.contains('error'))
-        ) {
+
+    if ( 
+        cellInput != null && 
+        (cellInput.children[0].children[0].innerText == "" || cellInput.classList.contains('error'))
+       ) 
+       {
         
         cellInput.children[0].classList.remove("display-none")
         cellInput.children[1].classList.add("display-none")
@@ -224,7 +227,6 @@ const ctrlArrows = (arrow, cells) => {
         const id = cellInput.id
         let y = id.substring(1, 2)
         let x = id.substring(3, 4)
-        console.log(id)
         switch (arrow) {
             case "ArrowUp":
                 if(y == "1"){
