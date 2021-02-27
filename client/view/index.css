@@ -9,7 +9,8 @@
 }
 body{
     color:#363636;
-    background-color: #f0fbff;
+    background: rgb(242,241,255);
+background: radial-gradient(circle, rgba(242,241,255,1) 0%, rgba(229,229,255,1) 23%, rgba(226,255,250,1) 59%, rgba(226,226,226,1) 100%);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 li{

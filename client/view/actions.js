@@ -15,7 +15,8 @@ cells.forEach(e => {
 
 document.addEventListener('keydown', (event) => {
     const keyLabel = event.key;
-    let hint = document.querySelector("#hint").dataset.active
+    const hintButton = document.querySelector("#hint") 
+    let hint = hintButton.dataset.active
     if (['1', '2', '3', '4', '5', '6', '7', '8', '9'].includes(keyLabel)) {
         if (hint == "true") {
             setHint(keyLabel)
@@ -26,7 +27,11 @@ document.addEventListener('keydown', (event) => {
         clear(keyLabel)
     } else if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(keyLabel)) {
         ctrlArrows(keyLabel, cells)
+    } else if (keyLabel == "Shift") {
+        
+        actionHintButton(hintButton)
     }
+
     else {
         console.log("Pressinone uma tecla de um a nove.")
     }
@@ -55,12 +60,16 @@ document.querySelector("#clear").addEventListener('mousedown', () => {
 //Hint button
 document.querySelector("#hint").addEventListener('mousedown', (input) => {
     const el = input.currentTarget
+    actionHintButton(el)
+})
+
+const actionHintButton = (el) => {
     if (el.dataset.active == "false") {
         el.dataset.active = true
     } else {
         el.dataset.active = false
     }
-})
+}
 
 const setHint = (number) => {
     const cellInput = document.querySelector("td.input")
@@ -265,7 +274,7 @@ const ctrlArrows = (arrow, cells) => {
         cell = document.querySelector("#l"+y+"c"+x+"")
         hilightElements(cell)
     } else {
-        hilightElements(cells[0])
+        hilightElements(cells[40])
     }
 
     
