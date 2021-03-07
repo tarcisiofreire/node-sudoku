@@ -7,4 +7,8 @@ module.exports = app => {
             Jogo.getJogo()
         )
     })
+
+    app.get("/ranking", (request, response) => {
+        
+    })
 }

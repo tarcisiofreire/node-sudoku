@@ -3,7 +3,6 @@
 //The numerical inputs will be inserted from the keyboard
 //Check the local storage
 //and send the return
-
 const cells = document.querySelectorAll(".matrix td")
 
 cells.forEach(e => {

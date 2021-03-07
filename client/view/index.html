@@ -7,1427 +7,1481 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <dl id="informations">
-            <li>Type: <span>Easy</span></li>
-            <li>Errors: <span id="errors">0</span>/3</li>
-            <li>Timer: <span id="timer">00:00</span></li>
-        </dl>
+    <header>
+        <h1 class="logo">SUDOKU<span>.</span>GAME</h1>
+    </header>
+    <main class="blur">
+        <div class="container">
+            <dl id="informations">
+                <li>Type: <span>Easy</span></li>
+                <li>Errors: <span id="errors">0</span>/3</li>
+                <li>Points: <span id="points">0</span></li>
+                <li>Timer: <span id="timer">00:00</span></li>
+            </dl>
+        </div>
+        <div class="matrix">
+            <table>
+                <tr class="l1">
+                    <td id="l1c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c4" data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c5" data-column="5" ="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l1c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="l2"> 
+                    <td id="l2c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+                    </td>
+                    <td id="l2c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c4" data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l2c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l3">
+                    <td id="l3c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c2"  data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c3"  data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c4"  data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l3c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l4">
+                    <td id="l4c1"  data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c4" data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l4c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l5">
+                    <td id="l5c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c4"  data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l5c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l6">
+                    <td id="l6c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c4"  data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l6c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l7">
+                    <td id="l7c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c4" data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l7c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l8">
+                    <td id="l8c1" data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c4" data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l8c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr class="l9">
+                    <td id="l9c1"  data-column="1" class="c1">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c2" data-column="2" class="c2">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c3" data-column="3" class="c3">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c4" data-column="4" class="c4">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c5" data-column="5" class="c5">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c6" data-column="6" class="c6">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c7" data-column="7" class="c7">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c8" data-column="8" class="c8">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                    <td id="l9c9" data-column="9" class="c9">
+                        <div class="value">
+                            <span> </span>
+                        </div>
+                        <div class="hints display-none">
+                            <span class="hint c1">1</span>
+                            <span class="hint c2">2</span>
+                            <span class="hint c3">3</span>
+                            <span class="hint c4">4</span>
+                            <span class="hint c5">5</span>
+                            <span class="hint c6">6</span>
+                            <span class="hint c7">7</span>
+                            <span class="hint c8">8</span>
+                            <span class="hint c9">9</span>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="container">
+            <ul id="menu">
+                <li>Voltar</li>
+                <li id="clear">Limpar</li>
+                <li id="hint" data-active="false">Palpite</li>
+            </ul>
+        </div>
+        <div class="container">
+            <div id="numbers">
+                <div id="1">1</div>
+                <div id="2">2</div>
+                <div id="3">3</div>
+                <div id="4">4</div>
+                <div id="5">5</div>
+                <div id="6">6</div>
+                <div id="7">7</div>
+                <div id="8">8</div>
+                <div id="9">9</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="start_entry">
+        <div class="window">
+            <h1> GAME<span>.</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /> SUDOKU </h1>
+            
+            <div class="form">
+                <input type="text" placeholder="Insert your name"/>
+                <button onclick="start()">Start</button>
+            </div>
+            
+            <div>
+                <button onclick="show('ranking')"> Ranking </button>
+            </div>
+        </div>
     </div>
-    <div class="matrix">
-        <table>
-            <tr class="l1">
-                <td id="l1c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c4" data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c5" data-column="5" ="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l1c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-            </tr>
-            <tr class="l2"> 
-                <td id="l2c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-                </td>
-                <td id="l2c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
+    <div class="modal hidden" id="ranking">
+        <div class="slide">
+            <h2>Ranking</h2>
+
+            <div class="hide button" onclick="show('ranking')"> Hide </div>
+            
+            <table class="ranking">
+                <thead>
+                    <tr>
+                        <th>Pos.</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pos">1</td>
+                        <td>Tarcísio Freire</td>
+                        <td class="score">1500</td>
+                    </tr>
+                    <tr>
+                        <td class="pos">2</td>
+                        <td>Fernanda Helena Freire</td>
+                        <td class="score">1500</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                </td>
-                <td id="l2c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l2c4" data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l2c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l2c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l2c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l2c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l2c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l3">
-                <td id="l3c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c2"  data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c3"  data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c4"  data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l3c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l4">
-                <td id="l4c1"  data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c4" data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l4c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l5">
-                <td id="l5c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c4"  data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l5c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l6">
-                <td id="l6c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c4"  data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l6c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l7">
-                <td id="l7c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c4" data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l7c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l8">
-                <td id="l8c1" data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c4" data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l8c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-            <tr class="l9">
-                <td id="l9c1"  data-column="1" class="c1">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c2" data-column="2" class="c2">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c3" data-column="3" class="c3">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c4" data-column="4" class="c4">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c5" data-column="5" class="c5">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c6" data-column="6" class="c6">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c7" data-column="7" class="c7">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c8" data-column="8" class="c8">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-                <td id="l9c9" data-column="9" class="c9">
-                    <div class="value">
-                        <span> </span>
-                    </div>
-                    <div class="hints display-none">
-                        <span class="hint c1">1</span>
-                        <span class="hint c2">2</span>
-                        <span class="hint c3">3</span>
-                        <span class="hint c4">4</span>
-                        <span class="hint c5">5</span>
-                        <span class="hint c6">6</span>
-                        <span class="hint c7">7</span>
-                        <span class="hint c8">8</span>
-                        <span class="hint c9">9</span>
-                    </div>
-
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="container">
-        <ul id="menu">
-            <li>Voltar</li>
-            <li id="clear">Limpar</li>
-            <li id="hint" data-active="false">Palpite</li>
-        </ul>
-    </div>
-    <div class="container">
-        <div id="numbers">
-            <div id="1">1</div>
-            <div id="2">2</div>
-            <div id="3">3</div>
-            <div id="4">4</div>
-            <div id="5">5</div>
-            <div id="6">6</div>
-            <div id="7">7</div>
-            <div id="8">8</div>
-            <div id="9">9</div>
         </div>
     </div>
     <script src="index.js"></script>
     <script src="actions.js"></script>
+    <script src="ranking.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 {
-    "erros": 3,
-    "type": ["Easy", "Medium", "hard"]
+    "errors": 3,
+    "type": ["Easy", "Medium", "hard"],
+    "domain": "http://localhost:3000"
 }

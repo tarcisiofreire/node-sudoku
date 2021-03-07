@@ -14,6 +14,7 @@ module.exports = () => {
 
     consign()
         .include('./server/controllers')
+        .include('../client/view')
         .into(app);
 
     return app;
